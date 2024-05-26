@@ -3,6 +3,12 @@
 */
 
 function wait(n) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, n*1000);
+  });
 }
+
+// wait(5).then(() => console.log("wait time completed"));
+// Above will confirm that the wait time is for 5 seconds .. so that's all with promises..
 
 module.exports = wait;

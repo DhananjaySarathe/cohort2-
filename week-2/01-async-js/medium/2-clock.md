@@ -6,3 +6,14 @@ Can you make it so that it updates every second, and shows time in the following
  - HH:MM::SS (Eg. 13:45:23)
 
  - HH:MM::SS AM/PM (Eg 01:45:23 PM)
+
+function getLocaleFormattedTime() {
+  const now = new Date();
+  const time = now.toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+  console.log(time);
+}
+setInterval(getLocaleFormattedTime, 1000);
