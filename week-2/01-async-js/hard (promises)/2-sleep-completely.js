@@ -4,7 +4,18 @@
  * the function should return a promise just like before
  */
 
+function waitTill(milliseconds) {
+  const startDate = Date.now();
+  while (Date.now() - startDate < milliseconds) {           //thread is blocked till the milliseconds time.(However we should not block the thread.)
+    //busy wait         
+  }
+}
+
 function sleep(milliseconds) {
+  return new Promise(function (resolve) {
+    waitTill(milliseconds);
+    resolve();
+  });
 }
 
 module.exports = sleep;
